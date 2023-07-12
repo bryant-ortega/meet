@@ -1,7 +1,11 @@
-# meet
+# Meet
 A serverless, progressive web application (PWA) with React using a
 test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.
+
+## Serverless Functions
+
+The Google Calendar API is used by the Meet App to access information from CareerFoundry's Google Calendar account. The app uses a serverless computing technology called AWS Lambda's authorization function to gain access to the protected API. The app submits its credentials to the Lambda function, where they are validated. A JSON Web Token (JWT), which is needed for subsequent queries to the Google Calendar API, is obtained by the app after authentication.
 
 ## Key Features:
 - Filter Events by City.
@@ -120,4 +124,5 @@ Show a chart with the number of upcoming events in each city.
 - Given user has not selected a city;
 - When the user wants to compare events between cities; 
 - Then they should be able to access a chart with the number of upcoming events in each city.
-  
+
+
