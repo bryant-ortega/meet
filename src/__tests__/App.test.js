@@ -16,9 +16,4 @@ describe("<App /> component", () => {
     test("render CitySearch", () => {
         expect(AppDOM.querySelector("#city-search")).toBeInTheDocument();
     });
-
-    test("ensures the NumberOfEvents component is rendered correctly"), () {
-      const NumberOfEvents
-      expect(NumberOfEvents.container.firstChild.querySelector()).toBeInTheDocument();
-    }
 });
