@@ -12,4 +12,4 @@ const NumberOfEvents = ({ events }) => {
     );
 };
 
-export default EventList;
+export default NumberOfEvents;
