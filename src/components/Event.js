@@ -7,21 +7,7 @@ const Event = ({ event }) => {
   const toggleDetails = () => {
       setShowDetails(!showDetails);
   };
-    return (
-        <li>
-            <div className="event">
-                <div className="location">{event.location} </div>
-                <div className="dateTime">{event.start.dateTime}</div>
-                <div className="name">{event.summary}</div>
-                {showDetails && (
-                    <div className="description">{event.description}</div>
-                )}
-                <button className="details-btn" onClick={toggleDetails}>
-                    {showDetails ? "Hide Details" : "Show Details"}
-                </button>
-            </div>
-        </li>
-    );
+    return ();
 };
 
 export default Event;
