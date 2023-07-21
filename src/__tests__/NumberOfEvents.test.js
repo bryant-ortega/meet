@@ -1,5 +1,6 @@
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import NumberOfEvents from "../components/NumberOfEvents";
-import { render } from "@testing-library/react";
 
 describe("<NumberOfEvents /> component", () => {
     let NumberOfEventsComponent;
@@ -7,10 +8,20 @@ describe("<NumberOfEvents /> component", () => {
         NumberOfEventsComponent = render(<NumberOfEvents />);
     });
     test("renders element with role of 'textbox'", () => {
-        expect(NumberOfEventsComponent.queryByRole("textbox"))
-            .toBeInTheDocument;
+        expect(
+            NumberOfEventsComponent.queryByRole("textbox")
+        ).toBeInTheDocument();
     });
     test("renders 32 as default value of events", () => {
-        expect(NumberOfEventsComponent.querySelector("32")).toBeInTheDocument();
+        const numberOfEventsTextBox =
+            NumberOfEventsComponent.queryByRole("textbox");
+        expect(numberOfEventsTextBox).toHaveValue("32");
+    });
+    test("state changes when user types a number", async () => {
+        const user = userEvent.setup();
+        const numberOfEventsTextBox =
+            NumberOfEventsComponent.queryByRole("textbox");
+        await user.type(numberOfEventsTextBox, "{backspace}{backspace}10");
+        expect(numberOfEventsTextBox).toHaveValue("10");
     });
 });
