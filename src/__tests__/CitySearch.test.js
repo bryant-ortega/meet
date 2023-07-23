@@ -1,6 +1,6 @@
 // src/__tests__/CitySearch.test.js
 
-import { render, within } from "@testing-library/react";
+import { render, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CitySearch from "../components/CitySearch";
 import App from "../App";
@@ -68,7 +68,7 @@ describe("<CitySearch /> component", () => {
         const allEvents = await getEvents();
         const allLocations = extractLocations(allEvents);
         CitySearchComponent.rerender(
-            <CitySearch allLocations={allLocations} />
+            <CitySearch allLocations={allLocations} setCurrentCity={() => {}} />
         );
 
         const cityTextBox = CitySearchComponent.queryByRole("textbox");
