@@ -8,7 +8,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     const [suggestions, setSuggestions] = useState([]);
     const handleInputChanged = event => {
         const value = event.target.value;
-        const filteredLocations = allLocations
+        const filteredLocations = allLocations                
             ? allLocations.filter(location => {
                   return (
                       location.toUpperCase().indexOf(value.toUpperCase()) > -1

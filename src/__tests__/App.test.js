@@ -6,6 +6,7 @@ import { getEvents } from "../api";
 import App from "../App";
 
 
+
 describe("<App /> component", () => {
     let AppDOM;
     beforeEach(() => {
@@ -55,4 +56,26 @@ describe("<App /> integration", () =>{
       })
   });
 
+
+    test("user can change the number of events displayed", async () => {
+        //userEvent is set, and the App component and its DOM are mocked.
+        const user = userEvent.setup();
+        const AppComponent = render(<App />);
+        const AppDOM = AppComponent.container.firstChild;
+
+        //A reference to the NumberOfEvents component root DOM node is initialized, then a query is performed to find the Number Of Events input text box in it.
+        const NumberOfEventsDOM = AppDOM.querySelector("#number-of-events");
+        const NumberOfEventsInput =
+            within(NumberOfEventsDOM).queryByRole("textbox");
+
+        await user.type(NumberOfEventsInput, "{backspace}{backspace}10");
+
+
+
+        const EventListDom = AppDOM.querySelector("#event-list");
+        const allRenderedEventItems =
+            within(EventListDom).queryAllByRole("listitem");
+
+        expect(allRenderedEventItems.length).toHaveValue("10");
+    });
 });

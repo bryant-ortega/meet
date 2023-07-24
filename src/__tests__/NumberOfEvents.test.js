@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import NumberOfEvents from "../components/NumberOfEvents";
 
@@ -25,3 +25,4 @@ describe("<NumberOfEvents /> component", () => {
         expect(numberOfEventsTextBox).toHaveValue("10");
     });
 });
+
