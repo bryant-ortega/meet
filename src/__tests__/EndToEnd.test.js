@@ -35,3 +35,35 @@ describe("show/hide an event details", () => {
         expect(eventDetails).toBeNull();
     });
 });
+
+
+// describe("Filter events by city.", () => {
+//    let browser;
+//    let page;
+//    beforeAll(async () => {
+//       browser = await puppeteer.launch({
+//             // headless: false,
+//             slowMo: 250, // slow down by 250ms,
+//             timeout: 0, // removes any puppeteer/browser timeout limitations (this isn't the same as the timeout of jest)
+//         });
+//         page = await browser.newPage();
+//         await page.goto("http://localhost:3000/");
+//         await page.waitForSelector(".event");
+//     });
+
+//     afterAll(() => {
+//         browser.close();
+//     });
+
+//     test("When user hasn`t searched for a city, show upcoming events from all cities.", () => {
+       
+//     });
+
+//     test("User should see a list of suggestions when they search for a city.", () => {
+
+//     });
+
+//     test("User can select a city from the suggested list.", () => {
+
+//     });
+// });
