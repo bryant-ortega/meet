@@ -15,14 +15,14 @@ defineFeature(feature, test => {
 
         });
 
-        then(/^the default number will be (\d+)$/, (arg0) => {
+        then('the default number will be 32', () => {
 
         });
     });
 
     
     test('User can change the number of events they want to see.', ({ given, when, then }) => {
-        given(/^user received a list of (\d+) events per selected city$/, (arg0) => {
+        given('user received a list of 32 events per selected city', () => {
 
         });
 
