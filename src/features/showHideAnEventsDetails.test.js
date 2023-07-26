@@ -1,7 +1,5 @@
 import { loadFeature, defineFeature } from "jest-cucumber";
 import { render, within, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-
 import App from "../App";
 
 const feature = loadFeature("./src/features/showHideAnEventsDetails.feature");
@@ -21,7 +19,7 @@ defineFeature(feature, test => {
         );
     });
 
-    test("User can expand the event elelment to reveal additional details.", ({
+    test("User can expand the event element to reveal additional details.", ({
         given,
         when,
         then,
@@ -33,7 +31,7 @@ defineFeature(feature, test => {
         then("the event reveals more details", () => {});
     });
 
-    test("User can collapse the event elelment to hide the details again.", ({
+    test("User can collapse the event element to hide the details again.", ({
         given,
         when,
         then,
