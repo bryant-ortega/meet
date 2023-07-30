@@ -3,13 +3,22 @@
 import { useState } from "react";
 
 
-const NumberOfEvents = ({ setCurrentNOE }) => {
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     const [number, setNumber] = useState(32);
 
     const handleInputChanged = event => {
         const value = event.target.value;
         setNumber(value);
-        setCurrentNOE(value);
+        
+        let errorText;
+        if (isNaN(value) || value <= 0) {
+            errorText =
+                "Please select a whole number from 1 to 32.";
+        } else {
+            errorText = "";
+            setCurrentNOE(value);
+        }
+        setErrorAlert(errorText);
     };
 
     return (

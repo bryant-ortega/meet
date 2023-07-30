@@ -71,6 +71,6 @@ describe("<App /> integration", () => {
         const allRenderedEventItems =
             within(EventListDom).queryAllByRole("listitem");
 
-        expect(allRenderedEventItems.length).toBe(10); 
+        expect(allRenderedEventItems.length).toBe(10);
     });
 });

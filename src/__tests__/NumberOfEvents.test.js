@@ -1,11 +1,13 @@
-import { render, } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import NumberOfEvents from "../components/NumberOfEvents";
 
 describe("<NumberOfEvents /> component", () => {
     let NumberOfEventsComponent;
     beforeEach(() => {
-        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />);
+        NumberOfEventsComponent = render(
+            <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
+        );
     });
     test("renders element with role of 'textbox'", () => {
         expect(
@@ -25,4 +27,3 @@ describe("<NumberOfEvents /> component", () => {
         expect(numberOfEventsTextBox).toHaveValue("10");
     });
 });
-
