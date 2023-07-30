@@ -11,7 +11,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
         setNumber(value);
         
         let errorText;
-        if (isNaN(value) || value <= 0) {
+        if (isNaN(value) || value <= 0 || value > 32) {
             errorText =
                 "Please select a whole number from 1 to 32.";
         } else {
