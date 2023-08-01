@@ -62,10 +62,10 @@ const getToken = async code => {
 
 // This function will fetch the list of all events
 export const getEvents = async () => {
-  NProgress.start();
+    NProgress.start();
 
     if (window.location.href.startsWith("http://localhost")) {
-      NProgress.done();
+        NProgress.done();
         return mockData;
     }
 
@@ -84,11 +84,10 @@ export const getEvents = async () => {
             token;
         const response = await fetch(url);
         const result = await response.json();
-        
         if (result) {
-          NProgress.done();
-            return result.events;
+            NProgress.done();
             localStorage.setItem("lastEvents", JSON.stringify(result.events));
+            return result.events;
         } else return null;
     }
     NProgress.done();
