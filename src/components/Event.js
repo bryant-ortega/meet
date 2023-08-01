@@ -7,7 +7,6 @@ const Event = ({ event }) => {
         setShowDetails(!showDetails);
     };
     return (
-      //HOW DO I FIGURE OUT HOW TO CODE THIS?
         <li>
             <div className="event">
                 <h2>{event.summary}</h2>

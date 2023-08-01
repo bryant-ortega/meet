@@ -23,6 +23,8 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
 
     return (
         <div id="number-of-events">
+            <h4 className="label-text">Events Displayed: </h4>
+            <p></p>
             <input
                 type="text"
                 className="textbox"
