@@ -1,39 +1,44 @@
 // src/components/EventGenresChart.js
 
 import { useState, useEffect } from "react";
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
-
+import React, { PureComponent } from "react";
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
-    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
+    const genres = ["React", "JavaScript", "Node", "jQuery", "Angular"];
 
-const getData = () => {
-    const data = genres.map(genre => {})
-}
+    useEffect(() => {
+        setData(getData());
+    }, [`${events}`]);
 
+    const getData = () => {
+        const data = genres.map(genre => {
+            const filteredEvents = events.filter(event =>
+                event.summary.includes(genre)
+            );
+            return {
+                name: genre,
+                value: filteredEvents.length,
+            };
+        });
+        return data;
+    };
 
     return (
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart width={400} height={400}>
-            <Pie
-              data={data}
-              cx="50%"
-              cy="50%"
-              labelLine={false}
-              label={renderCustomizedLabel}
-              outerRadius={80}
-              fill="#8884d8"
-              dataKey="value"
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-          </PieChart>
+        <ResponsiveContainer width="99%" height={400}>
+            <PieChart>
+                <Pie
+                    data={data}
+                    dataKey="value"
+                    fill="#8884d8"
+                    labelLine={false}
+                    label
+                    outerRadius={130}
+                />
+            </PieChart>
         </ResponsiveContainer>
-      );
+    );
 };
 
 export default EventGenresChart;
