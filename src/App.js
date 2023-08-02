@@ -60,7 +60,9 @@ const App = () => {
                 setCurrentNOE={setCurrentNOE}
                 setErrorAlert={setErrorAlert}
             />
+            <div className="charts-container">
             <CityEventsChart allLocations={allLocations} events={events} />
+            </div>
             <EventList events={events} />
         </div>
     );
