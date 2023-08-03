@@ -59,7 +59,7 @@ const EventGenresChart = ({ events }) => {
                     fill="#8884d8"
                     labelLine={false}
                     label={renderCustomizedLabel}
-                    outerRadius={120}
+                    outerRadius={110}
                 />
             </PieChart>
         </ResponsiveContainer>
