@@ -1,8 +1,8 @@
 // src/components/EventGenresChart.js
 
 import { useState, useEffect } from "react";
-import React, { PureComponent } from "react";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
+import React from "react";
+import { PieChart, Pie, ResponsiveContainer } from "recharts";
 
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
