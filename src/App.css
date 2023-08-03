@@ -113,10 +113,8 @@ input[type="number"] {
         flex-direction: row;
     }
     .charts-container .recharts-responsive-container {
-        flex-basis: 50%;
-        max-width: 50%;
-        min-width: auto;
-        margin: 0 auto;
+        min-width: 100%;
+        display: flex;
     }
 }
 
