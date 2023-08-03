@@ -59,7 +59,7 @@ const EventGenresChart = ({ events }) => {
                     dataKey="value"
                     labelLine={false}
                     label={renderCustomizedLabel}
-                    outerRadius={110}
+                    outerRadius={105}
                 >
                     {data.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={colors[index]} />
