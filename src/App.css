@@ -103,11 +103,19 @@ input[type="number"] {
 }
 
 .charts-container {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media (max-width: 768px) {
-    .charts-container {
-        grid-template-columns: 1fr;
-    }
+@media only screen and (min-width: 992px) {
+  .charts-container {
+    flex-direction: row;
+   }
+  .charts-container .recharts-responsive-container {
+    flex-basis: 50%;
+    max-width: 50%;
+    min-width: auto;
+    margin: 0 auto;
+  }
 }
